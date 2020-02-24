@@ -12,7 +12,7 @@ struct ContentView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
     // access the extended function in our model class
-    @FetchRequest(fetchRequest: ToDoItem.getALlToDoItems()) var TodoItems: FetchedResults<ToDoItem>
+    @FetchRequest(fetchRequest: ToDoItem.getALlToDoItems()) var toDoItems: FetchedResults<ToDoItem>
     
     // for our textFiled input
     @State private var newToDoItem = ""
@@ -26,9 +26,25 @@ struct ContentView: View {
                     HStack{
                         TextField("new Item", text: $newToDoItem)
                         Button(action: {
+                            
                             // access the todo item object from the context
                             let toDoItem = ToDoItem(context: self.managedObjectContext)
+                            // pass as title the value of our input
                             toDoItem.title = self.newToDoItem
+                            // add date
+                            toDoItem.createdAt = Date()
+                            
+                            // save the updated version of our managed object
+                            do {
+                                try self.managedObjectContext.save()
+                                
+                            }catch {
+                                print(error)
+                            }
+                            
+                            // after adding to core data cleanup input
+                            self.newToDoItem = ""
+                            
                         }) {
                             Image(systemName: "plus.circle.fill")
                                 .foregroundColor(.green)
@@ -37,6 +53,13 @@ struct ContentView: View {
                     }
                     
                 }.font(.headline)
+                
+                Section(header: Text("To Do's")){
+                    // get all the fetchResults of todos
+                    ForEach(self.toDoItems) { item in
+                        ToDoItemRow(title: item.title, createdAt: "\(item.createdAt!)")
+                    }
+                }
                 
             }
             .navigationBarTitle("My List")

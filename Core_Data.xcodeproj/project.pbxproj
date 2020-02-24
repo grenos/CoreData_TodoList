@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D894F092403B769009D1112 /* ToDoItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D894F082403B769009D1112 /* ToDoItemRow.swift */; };
 		7DF0598224039B150009DBDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF0598124039B150009DBDA /* AppDelegate.swift */; };
 		7DF0598424039B150009DBDA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF0598324039B150009DBDA /* SceneDelegate.swift */; };
 		7DF0598724039B150009DBDA /* Core_Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7DF0598524039B150009DBDA /* Core_Data.xcdatamodeld */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D894F082403B769009D1112 /* ToDoItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemRow.swift; sourceTree = "<group>"; };
 		7DF0597E24039B150009DBDA /* Core_Data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Core_Data.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DF0598124039B150009DBDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DF0598324039B150009DBDA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				7DF0598124039B150009DBDA /* AppDelegate.swift */,
 				7DF0598324039B150009DBDA /* SceneDelegate.swift */,
 				7DF0598824039B150009DBDA /* ContentView.swift */,
+				7D894F082403B769009D1112 /* ToDoItemRow.swift */,
 				7DF059C92403A0B10009DBDA /* ToDoItem.swift */,
 				7DF0598A24039B150009DBDA /* Assets.xcassets */,
 				7DF0598F24039B150009DBDA /* LaunchScreen.storyboard */,
@@ -281,6 +284,7 @@
 				7DF059CA2403A0B10009DBDA /* ToDoItem.swift in Sources */,
 				7DF0598924039B150009DBDA /* ContentView.swift in Sources */,
 				7DF0598724039B150009DBDA /* Core_Data.xcdatamodeld in Sources */,
+				7D894F092403B769009D1112 /* ToDoItemRow.swift in Sources */,
 				7DF059C024039BE10009DBDA /* LESSON_NOTES.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
