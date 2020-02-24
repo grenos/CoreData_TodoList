@@ -37,7 +37,6 @@ struct ContentView: View {
                             // save the updated version of our managed object
                             do {
                                 try self.managedObjectContext.save()
-                                
                             }catch {
                                 print(error)
                             }
@@ -58,6 +57,19 @@ struct ContentView: View {
                     // get all the fetchResults of todos
                     ForEach(self.toDoItems) { item in
                         ToDoItemRow(title: item.title, createdAt: "\(item.createdAt!)")
+                    }.onDelete {indexSet in
+                        // get an item on the list by its index
+                        // and pass it on the delete method of the manageObjectContext
+                        // to delete it
+                        let deleteItem = self.toDoItems[indexSet.first!]
+                        self.managedObjectContext.delete(deleteItem)
+                        
+                        // after deleteing the item we need to save
+                        do {
+                            try self.managedObjectContext.save()
+                        } catch {
+                            print(error)
+                        }
                     }
                 }
                 
